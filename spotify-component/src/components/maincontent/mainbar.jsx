@@ -18,6 +18,17 @@ function Mainbar () {
     {id: 6, title: 'Weekly Motivatio..', title2: 'Ren Ina Scot', img_link:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image10.png?raw=true" }
     ];
 
+    const even = [
+        {id: 1+1, title: 'Weekly Motivatio..', title2: 'Ren Ina Scot', img_link:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image9.png?raw=true" },
+        {id: 2, title: 'Weekly Motivatio..', title2: 'Ren Ina Scot', img_link:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image8.png?raw=true" },
+        {id: 3+1, title: 'Weekly Motivatio..', title2: 'Ren Ina Scot', img_link:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image7.png?raw=true" },
+        {id: 4, title: 'Weekly Motivatio..', title2: 'Ren Ina Scot', img_link:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image6.png?raw=true" },
+        {id: 5+1, title: 'Weekly Motivatio..', title2: 'Ren Ina Scot', img_link:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image5.png?raw=true" },
+        {id: 6, title: 'Weekly Motivatio..', title2: 'Ren Ina Scot', img_link:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image10.png?raw=true" }
+    ];
+
+    const filtereven = even.filter(m => m.id % 2 == 0);
+
     return (
         <>
           <div className='part-2'>
@@ -79,16 +90,24 @@ function Mainbar () {
      <div className='like-text'>Shows you might like</div>
 
      <div className="sec-3">
-        {newdata.map((j) => (
+        {/* {newdata.map((j) => (
             <div key={j.id} className="card-1">
-             <img src={j.img_link} alt="" height={130} width={130} />
+             <img id='card-img' src={j.img_link} alt="" height={130} width={130} />
+             <div  id="card-text-1">{j.title}</div>
+             <div  id="card-text-2">{j.title2}</div>
+            </div>
+        ))} */}
+         {filtereven.map((j) => (
+            <div key={j.id} className="card-1">
+             <img id='card-img' src={j.img_link} alt="" height={130} width={130} />
              <div  id="card-text-1">{j.title}</div>
              <div  id="card-text-2">{j.title2}</div>
             </div>
         ))}
      </div>
 
-     <div className='sec-3'>
+
+     {/* <div className='sec-3'>
       <div className='card-1'>
         <img id='card-img' src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/10.spotify-clone/assets/image9.png?raw=true" height={130} width={130} alt="Singer Image" />
         <div id='card-text-1'>Weekly Motivatio..</div>
@@ -126,7 +145,7 @@ function Mainbar () {
         <div id='card-text-2'>Ren Ina Scot</div>
       </div>
 
-     </div>
+     </div> */}
   </div>
         </>
     )
